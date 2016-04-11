@@ -5,13 +5,12 @@ public abstract class Computer extends Device{
      	String operationalSystem;
      	float hdSize;
      	float availableStorage;
-     	float currentOSVersion;
-     	static float latestOSVersion = 1.1;
+     	double currentOSVersion;
+     	static double latestOSVersion = 1.1;
      	Date downloadDate;
      	Network network;
 	
-	Computer(const string &OS, float hd, float currentV)
-	:downloadDate(1, 1, 2001), Device(true, hd)
+	Computer(String OS, float hd, float currentV)
 	{
 		this.operationalSystem = OS;
 		this.hdSize = hd;
@@ -20,7 +19,7 @@ public abstract class Computer extends Device{
 		network = new Network();
 	}
 
-	Computer(const Computer &other)
+	Computer (Computer other)
 	{
 		this.operationalSystem=other.operationalSystem;
 		this.hdSize=other.hdSize;
