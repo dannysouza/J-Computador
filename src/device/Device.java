@@ -32,7 +32,7 @@ public abstract class Device {
 		}
 	}
 	
-	public void turnOff()
+	public void turnOff()  
 	{
 		if (!turnedOn)
 			System.out.println("\n The device is already turned off. \n");
