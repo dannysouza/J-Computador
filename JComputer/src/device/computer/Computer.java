@@ -46,7 +46,7 @@ public abstract class Computer extends Device {
         JOptionPane.showMessageDialog(null,message);
     }
     
-    public void launchOSVersion() {
+    public static void launchOSVersion() {
         Computer.latestOSVersion += 0.1;
     }
 
