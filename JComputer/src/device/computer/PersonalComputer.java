@@ -14,6 +14,10 @@ public class PersonalComputer extends Computer implements Authenticatable{
         this.name = "BMO";
     }
     
+    public void exeGame(){
+        // execute game 
+    }
+    
     public void createNewUser(){
 	String userName = JOptionPane.showInputDialog("User name: "); 
         String password = JOptionPane.showInputDialog("Password: ");
