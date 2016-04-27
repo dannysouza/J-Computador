@@ -5,62 +5,62 @@ import interfaces.Authenticatable;
 import computercerto.Date;
 import javax.swing.JOptionPane;
 
-public abstract class Computer extends Device implements Authenticatable{
+public abstract class Computer extends Device implements Authenticatable {
 
-    protected String operationalSystem;
-    protected double hdSize, availableStorage, currentOSVersion;
-    protected static double latestOSVersion = 1.1;
-    protected Date downloadDate;
-    protected Network network;
+	protected String operationalSystem;
+	protected double hdSize, availableStorage, currentOSVersion;
+	protected static double latestOSVersion = 1.1;
+	protected Date downloadDate;
+	protected Network network;
 
-    public Computer(String OS, double hd, double currentV) {
-        this.operationalSystem = OS;
-        this.hdSize = hd;
-        this.currentOSVersion = currentV;
-        this.availableStorage = hd;
-        network = new Network();
-    }
+	public Computer(String OS, double hd, double currentV) {
+		this.operationalSystem = OS;
+		this.hdSize = hd;
+		this.currentOSVersion = currentV;
+		this.availableStorage = hd;
+		network = new Network();
+	}
 
-    Computer(final Computer other) {
-        this.operationalSystem = other.operationalSystem;
-        this.hdSize = other.hdSize;
-        this.currentOSVersion = other.currentOSVersion;
-    }
+	Computer(final Computer other) {
+		this.operationalSystem = other.operationalSystem;
+		this.hdSize = other.hdSize;
+		this.currentOSVersion = other.currentOSVersion;
+	}
 
-    public void updateOS() {
-        print("Current version: " + currentOSVersion);
-        print("Latest version available: " + latestOSVersion);
-        print("Downloading files... ");
+	public void updateOS() {
+		print("Current version: " + currentOSVersion);
+		print("Latest version available: " + latestOSVersion);
+		print("Downloading files... ");
 
-        downloadDate.currentDateTime();
+		downloadDate.currentDateTime();
 
-        print("Download date: ");
-        downloadDate.displayDate();
+		print("Download date: ");
+		downloadDate.displayDate();
 
-        currentOSVersion = latestOSVersion;
+		currentOSVersion = latestOSVersion;
 
-        print("Operational System " + operationalSystem + " has been updated to version " + latestOSVersion);
+		print("Operational System " + operationalSystem + " has been updated to version " + latestOSVersion);
 
-        launchOSVersion();
-    }
+		launchOSVersion();
+	}
 
-    private void print(String message){
-        JOptionPane.showMessageDialog(null,message);
-    }
-    
-    public static void launchOSVersion() {
-        Computer.latestOSVersion += 0.1;
-    }
+	private void print(String message) {
+		JOptionPane.showMessageDialog(null, message);
+	}
 
-    public void installNetworkDrivers() {
-        network.installDrivers();
-    }
+	public static void launchOSVersion() {
+		Computer.latestOSVersion += 0.1;
+	}
 
-    public void connectToInternet() {
-        network.connectToInternet();
-    }
+	public void installNetworkDrivers() {
+		network.installDrivers();
+	}
 
-    public void removeMalwares() {
-        network.removeMalwares();
-    }
+	public void connectToInternet() {
+		network.connectToInternet();
+	}
+
+	public void removeMalwares() {
+		network.removeMalwares();
+	}
 }
