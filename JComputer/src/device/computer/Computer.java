@@ -1,9 +1,11 @@
 package device.computer;
 
+import interfaces.Authenticatable;
+
 import computercerto.Date;
 import javax.swing.JOptionPane;
 
-public abstract class Computer extends Device {
+public abstract class Computer extends Device implements Authenticatable{
 
     protected String operationalSystem;
     protected double hdSize, availableStorage, currentOSVersion;

@@ -47,4 +47,25 @@ public class WorkComputer extends Computer{
                 "\n\n HD size: " + hdSize + "\n\n Current OS version: " + 
                 currentOSVersion + "\n\n Remaining available storage: " + availableStorage);
     }
+    
+    public void searchUsers(){
+    	String name;
+    	name = JOptionPane.showInputDialog("User to search:");
+    	
+    	checkDatabase(name);
+    	
+    	if(checkDatabase(name))
+    		print("This username already exist");
+    	else
+    		print("This username is available");
+    }
+    
+    @Override
+    public boolean checkDatabase(String name){
+    	for(int i=0; i < users.size(); i++){
+    		if(userName.equals(users.get(i));
+    			return true;
+    	}
+    	return false;
+    }
 }

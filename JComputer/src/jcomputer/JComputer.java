@@ -67,7 +67,7 @@ public class JComputer {
         
         do{
             opt = JOptionPane.showInputDialog("\n1 - Execute Calculator \n2 - Execute Text Editor "
-                    + "\n3 - Update Windows \n 4 - Connect to the internet \n0 - Turn Off");
+                    + "\n3 - Update Windows \n 4 - Connect to the internet \n 5 - Search users 0 - Turn Off");
             switch(opt){
                 case "1":
                     w.exeCalculator();
@@ -85,6 +85,10 @@ public class JComputer {
                     w.connectToInternet();
                     sucess = true;
                     break;	
+    		case "5":
+    				w.searchUsers();
+    				sucess = true;
+    				break;
                 default:
                     sucess = false;
                     print("Choose a valid option");
@@ -104,7 +108,7 @@ public class JComputer {
         do{
             opt = JOptionPane.showInputDialog("1 - Execute Game \n2 - Create new user account \n3 - Log Off \n"
                     + "4 - Update Windows \n5 - Connect to the internet \n6 - "
-                    + "Install Network drivers \n0 - Turn Off \n");
+                    + "Install Network drivers \n 7 - Show users 0 - Turn Off \n");
             switch(opt){
                 case "1":
                     pc.exeGame();
@@ -130,6 +134,10 @@ public class JComputer {
                     pc.installNetworkDrivers();
                     sucess = true;
                     break;
+                case "7":
+                	pc.checkDatabase();
+                	sucess = true;
+                	break;
                 default:
                     sucess = false;
                     print("Choose a valid option");

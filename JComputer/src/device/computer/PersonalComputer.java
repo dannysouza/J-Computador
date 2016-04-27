@@ -1,10 +1,9 @@
 package device.computer;
 
-import interfaces.Authenticatable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class PersonalComputer extends Computer implements Authenticatable{
+public class PersonalComputer extends Computer{
     private ArrayList<String> users;
     private ArrayList<String> passwords;
     private final String name;
@@ -65,7 +64,7 @@ public class PersonalComputer extends Computer implements Authenticatable{
                 case "0":
                     System.exit(0);
                 default:
-                    print("DIGITA UM NEGOÇO VÁLIDO, MEU CHAPA! LARRA");
+                    print("Please enter a valid option. ");
                     sucess = false;
                     break;
             }
@@ -85,6 +84,12 @@ public class PersonalComputer extends Computer implements Authenticatable{
     public void criticalUpdate(){
         clearCache();
         updateOS();
+    }
+    
+    @Override
+    public void checkDatabase(){
+    	for(int i=0; i < users.size(); i++)
+            print ("\n" users.get(i));
     }
     
     private void print(String message){
